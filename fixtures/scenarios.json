@@ -1,0 +1,374 @@
+[
+  {
+    "schema_version": "1.0",
+    "name": "Excessive network exposure",
+    "snapshot_id": "pending",
+    "initial": [
+      "control:web",
+      "session:admin"
+    ],
+    "assumptions": "Authorised synthetic scenario. Compromise of the initial asset and possession of named test capabilities are assumed, not observed.",
+    "targets": [
+      {
+        "asset_id": "canary",
+        "capability": "read:canary",
+        "weight": 5
+      }
+    ],
+    "rules": [
+      {
+        "id": "reach-api",
+        "version": "1.0",
+        "label": "Reach internal API",
+        "requires_any": [
+          [
+            "control:web"
+          ]
+        ],
+        "relationships": [
+          "web-api"
+        ],
+        "effects": [
+          "reach:api"
+        ],
+        "evidence": [
+          "lab-design"
+        ],
+        "assumptions": "Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred."
+      },
+      {
+        "id": "read-via-api",
+        "version": "1.0",
+        "label": "Read canary with overbroad test identity",
+        "requires_any": [
+          [
+            "reach:api",
+            "identity:test-user"
+          ]
+        ],
+        "relationships": [
+          "user-auth",
+          "user-read",
+          "api-db",
+          "db-canary"
+        ],
+        "effects": [
+          "read:canary"
+        ],
+        "evidence": [
+          "lab-design"
+        ],
+        "assumptions": "Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred."
+      },
+      {
+        "id": "reach-admin",
+        "version": "1.0",
+        "label": "Reach exposed admin interface",
+        "requires_any": [
+          [
+            "control:web"
+          ]
+        ],
+        "relationships": [
+          "web-admin"
+        ],
+        "effects": [
+          "reach:admin"
+        ],
+        "evidence": [
+          "lab-design"
+        ],
+        "assumptions": "Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred."
+      },
+      {
+        "id": "read-via-admin",
+        "version": "1.0",
+        "label": "Synthetic admin session accesses canary",
+        "requires_any": [
+          [
+            "reach:admin",
+            "session:admin"
+          ]
+        ],
+        "relationships": [
+          "admin-data"
+        ],
+        "effects": [
+          "read:canary"
+        ],
+        "evidence": [
+          "lab-design"
+        ],
+        "assumptions": "Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred."
+      },
+      {
+        "id": "direct-db",
+        "version": "1.0",
+        "label": "Reach overly exposed database",
+        "requires_any": [
+          [
+            "control:web"
+          ]
+        ],
+        "relationships": [
+          "web-db"
+        ],
+        "effects": [
+          "reach:db"
+        ],
+        "evidence": [
+          "lab-design"
+        ],
+        "assumptions": "Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred."
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Overbroad access permission",
+    "snapshot_id": "pending",
+    "initial": [
+      "control:web",
+      "identity:test-user"
+    ],
+    "assumptions": "Authorised synthetic scenario. Compromise of the initial asset and possession of named test capabilities are assumed, not observed.",
+    "targets": [
+      {
+        "asset_id": "canary",
+        "capability": "read:canary",
+        "weight": 5
+      }
+    ],
+    "rules": [
+      {
+        "id": "reach-api",
+        "version": "1.0",
+        "label": "Reach internal API",
+        "requires_any": [
+          [
+            "control:web"
+          ]
+        ],
+        "relationships": [
+          "web-api"
+        ],
+        "effects": [
+          "reach:api"
+        ],
+        "evidence": [
+          "lab-design"
+        ],
+        "assumptions": "Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred."
+      },
+      {
+        "id": "read-via-api",
+        "version": "1.0",
+        "label": "Read canary with overbroad test identity",
+        "requires_any": [
+          [
+            "reach:api",
+            "identity:test-user"
+          ]
+        ],
+        "relationships": [
+          "user-auth",
+          "user-read",
+          "api-db",
+          "db-canary"
+        ],
+        "effects": [
+          "read:canary"
+        ],
+        "evidence": [
+          "lab-design"
+        ],
+        "assumptions": "Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred."
+      },
+      {
+        "id": "reach-admin",
+        "version": "1.0",
+        "label": "Reach exposed admin interface",
+        "requires_any": [
+          [
+            "control:web"
+          ]
+        ],
+        "relationships": [
+          "web-admin"
+        ],
+        "effects": [
+          "reach:admin"
+        ],
+        "evidence": [
+          "lab-design"
+        ],
+        "assumptions": "Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred."
+      },
+      {
+        "id": "read-via-admin",
+        "version": "1.0",
+        "label": "Synthetic admin session accesses canary",
+        "requires_any": [
+          [
+            "reach:admin",
+            "session:admin"
+          ]
+        ],
+        "relationships": [
+          "admin-data"
+        ],
+        "effects": [
+          "read:canary"
+        ],
+        "evidence": [
+          "lab-design"
+        ],
+        "assumptions": "Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred."
+      },
+      {
+        "id": "direct-db",
+        "version": "1.0",
+        "label": "Reach overly exposed database",
+        "requires_any": [
+          [
+            "control:web"
+          ]
+        ],
+        "relationships": [
+          "web-db"
+        ],
+        "effects": [
+          "reach:db"
+        ],
+        "evidence": [
+          "lab-design"
+        ],
+        "assumptions": "Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred."
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Segmentation blocks access",
+    "snapshot_id": "pending",
+    "initial": [
+      "control:proxy",
+      "identity:test-user"
+    ],
+    "assumptions": "Authorised synthetic scenario. Compromise of the initial asset and possession of named test capabilities are assumed, not observed.",
+    "targets": [
+      {
+        "asset_id": "canary",
+        "capability": "read:canary",
+        "weight": 5
+      }
+    ],
+    "rules": [
+      {
+        "id": "reach-api",
+        "version": "1.0",
+        "label": "Reach internal API",
+        "requires_any": [
+          [
+            "control:web"
+          ]
+        ],
+        "relationships": [
+          "web-api"
+        ],
+        "effects": [
+          "reach:api"
+        ],
+        "evidence": [
+          "lab-design"
+        ],
+        "assumptions": "Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred."
+      },
+      {
+        "id": "read-via-api",
+        "version": "1.0",
+        "label": "Read canary with overbroad test identity",
+        "requires_any": [
+          [
+            "reach:api",
+            "identity:test-user"
+          ]
+        ],
+        "relationships": [
+          "user-auth",
+          "user-read",
+          "api-db",
+          "db-canary"
+        ],
+        "effects": [
+          "read:canary"
+        ],
+        "evidence": [
+          "lab-design"
+        ],
+        "assumptions": "Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred."
+      },
+      {
+        "id": "reach-admin",
+        "version": "1.0",
+        "label": "Reach exposed admin interface",
+        "requires_any": [
+          [
+            "control:web"
+          ]
+        ],
+        "relationships": [
+          "web-admin"
+        ],
+        "effects": [
+          "reach:admin"
+        ],
+        "evidence": [
+          "lab-design"
+        ],
+        "assumptions": "Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred."
+      },
+      {
+        "id": "read-via-admin",
+        "version": "1.0",
+        "label": "Synthetic admin session accesses canary",
+        "requires_any": [
+          [
+            "reach:admin",
+            "session:admin"
+          ]
+        ],
+        "relationships": [
+          "admin-data"
+        ],
+        "effects": [
+          "read:canary"
+        ],
+        "evidence": [
+          "lab-design"
+        ],
+        "assumptions": "Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred."
+      },
+      {
+        "id": "direct-db",
+        "version": "1.0",
+        "label": "Reach overly exposed database",
+        "requires_any": [
+          [
+            "control:web"
+          ]
+        ],
+        "relationships": [
+          "web-db"
+        ],
+        "effects": [
+          "reach:db"
+        ],
+        "evidence": [
+          "lab-design"
+        ],
+        "assumptions": "Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred."
+      }
+    ]
+  }
+]

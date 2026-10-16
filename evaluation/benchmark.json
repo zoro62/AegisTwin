@@ -1,0 +1,835 @@
+{
+  "dataset": "seeded synthetic only",
+  "sweep": [
+    {
+      "size": 4,
+      "branching": 1,
+      "seed": 17,
+      "peak_python_bytes": 8675,
+      "result": {
+        "engine_version": "aegis-monotonic-1.0",
+        "rule_versions": {
+          "r00": "1.0",
+          "r01": "1.0",
+          "r02": "1.0",
+          "r03": "1.0"
+        },
+        "evidence_evaluated_at": "2026-10-16T13:53:23.008420+00:00",
+        "limits": {
+          "evidence_at": null,
+          "max_depth": 12,
+          "max_states": 5000,
+          "time_ms": 2000,
+          "top_k": 3,
+          "evidence_policy": "confirmed"
+        },
+        "removed_relationships": [],
+        "reachable_capabilities": [
+          "control:n0",
+          "control:n1",
+          "control:n2",
+          "control:n3",
+          "control:seed"
+        ],
+        "targets": [
+          {
+            "asset_id": "canary",
+            "capability": "control:n3",
+            "weight": 5,
+            "reachable": true,
+            "chains": [
+              [
+                "r00",
+                "r01",
+                "r03"
+              ],
+              [
+                "r00",
+                "r01",
+                "r02",
+                "r03"
+              ]
+            ]
+          }
+        ],
+        "blocked": [],
+        "applied_rules": [
+          "r00",
+          "r01",
+          "r02",
+          "r03"
+        ],
+        "states_explored": 6,
+        "depth": 4,
+        "truncated": false,
+        "warnings": [],
+        "runtime_ms": 0.43,
+        "assumptions": "Authorised synthetic scenario. Compromise of the initial asset and possession of named test capabilities are assumed, not observed.",
+        "limitations": "Monotonic capabilities; finite imported rules only. Chains are bounded witnesses, not all paths. Reachability is not exploitability or breach probability."
+      }
+    },
+    {
+      "size": 4,
+      "branching": 2,
+      "seed": 17,
+      "peak_python_bytes": 8075,
+      "result": {
+        "engine_version": "aegis-monotonic-1.0",
+        "rule_versions": {
+          "r00": "1.0",
+          "r01": "1.0",
+          "r02": "1.0",
+          "r03": "1.0"
+        },
+        "evidence_evaluated_at": "2026-10-16T13:53:23.008420+00:00",
+        "limits": {
+          "evidence_at": null,
+          "max_depth": 12,
+          "max_states": 5000,
+          "time_ms": 2000,
+          "top_k": 3,
+          "evidence_policy": "confirmed"
+        },
+        "removed_relationships": [],
+        "reachable_capabilities": [
+          "control:n0",
+          "control:n1",
+          "control:n2",
+          "control:n3",
+          "control:seed"
+        ],
+        "targets": [
+          {
+            "asset_id": "canary",
+            "capability": "control:n3",
+            "weight": 5,
+            "reachable": true,
+            "chains": [
+              [
+                "r00",
+                "r03"
+              ],
+              [
+                "r00",
+                "r01",
+                "r03"
+              ],
+              [
+                "r00",
+                "r02",
+                "r03"
+              ]
+            ]
+          }
+        ],
+        "blocked": [],
+        "applied_rules": [
+          "r00",
+          "r01",
+          "r02",
+          "r03"
+        ],
+        "states_explored": 9,
+        "depth": 4,
+        "truncated": false,
+        "warnings": [],
+        "runtime_ms": 0.689,
+        "assumptions": "Authorised synthetic scenario. Compromise of the initial asset and possession of named test capabilities are assumed, not observed.",
+        "limitations": "Monotonic capabilities; finite imported rules only. Chains are bounded witnesses, not all paths. Reachability is not exploitability or breach probability."
+      }
+    },
+    {
+      "size": 8,
+      "branching": 1,
+      "seed": 17,
+      "peak_python_bytes": 22707,
+      "result": {
+        "engine_version": "aegis-monotonic-1.0",
+        "rule_versions": {
+          "r00": "1.0",
+          "r01": "1.0",
+          "r02": "1.0",
+          "r03": "1.0",
+          "r04": "1.0",
+          "r05": "1.0",
+          "r06": "1.0",
+          "r07": "1.0"
+        },
+        "evidence_evaluated_at": "2026-10-16T13:53:23.024490+00:00",
+        "limits": {
+          "evidence_at": null,
+          "max_depth": 12,
+          "max_states": 5000,
+          "time_ms": 2000,
+          "top_k": 3,
+          "evidence_policy": "confirmed"
+        },
+        "removed_relationships": [],
+        "reachable_capabilities": [
+          "control:n0",
+          "control:n1",
+          "control:n2",
+          "control:n3",
+          "control:n4",
+          "control:n5",
+          "control:n6",
+          "control:n7",
+          "control:seed"
+        ],
+        "targets": [
+          {
+            "asset_id": "canary",
+            "capability": "control:n7",
+            "weight": 5,
+            "reachable": true,
+            "chains": [
+              [
+                "r00",
+                "r01",
+                "r05",
+                "r07"
+              ],
+              [
+                "r00",
+                "r01",
+                "r02",
+                "r05",
+                "r07"
+              ],
+              [
+                "r00",
+                "r01",
+                "r03",
+                "r05",
+                "r07"
+              ]
+            ]
+          }
+        ],
+        "blocked": [],
+        "applied_rules": [
+          "r00",
+          "r01",
+          "r02",
+          "r03",
+          "r04",
+          "r05",
+          "r06",
+          "r07"
+        ],
+        "states_explored": 32,
+        "depth": 8,
+        "truncated": false,
+        "warnings": [],
+        "runtime_ms": 4.265,
+        "assumptions": "Authorised synthetic scenario. Compromise of the initial asset and possession of named test capabilities are assumed, not observed.",
+        "limitations": "Monotonic capabilities; finite imported rules only. Chains are bounded witnesses, not all paths. Reachability is not exploitability or breach probability."
+      }
+    },
+    {
+      "size": 8,
+      "branching": 2,
+      "seed": 17,
+      "peak_python_bytes": 58624,
+      "result": {
+        "engine_version": "aegis-monotonic-1.0",
+        "rule_versions": {
+          "r00": "1.0",
+          "r01": "1.0",
+          "r02": "1.0",
+          "r03": "1.0",
+          "r04": "1.0",
+          "r05": "1.0",
+          "r06": "1.0",
+          "r07": "1.0"
+        },
+        "evidence_evaluated_at": "2026-10-16T13:53:23.029518+00:00",
+        "limits": {
+          "evidence_at": null,
+          "max_depth": 12,
+          "max_states": 5000,
+          "time_ms": 2000,
+          "top_k": 3,
+          "evidence_policy": "confirmed"
+        },
+        "removed_relationships": [],
+        "reachable_capabilities": [
+          "control:n0",
+          "control:n1",
+          "control:n2",
+          "control:n3",
+          "control:n4",
+          "control:n5",
+          "control:n6",
+          "control:n7",
+          "control:seed"
+        ],
+        "targets": [
+          {
+            "asset_id": "canary",
+            "capability": "control:n7",
+            "weight": 5,
+            "reachable": true,
+            "chains": [
+              [
+                "r00",
+                "r02",
+                "r07"
+              ],
+              [
+                "r00",
+                "r04",
+                "r07"
+              ],
+              [
+                "r00",
+                "r01",
+                "r02",
+                "r07"
+              ]
+            ]
+          }
+        ],
+        "blocked": [],
+        "applied_rules": [
+          "r00",
+          "r01",
+          "r02",
+          "r03",
+          "r04",
+          "r05",
+          "r06",
+          "r07"
+        ],
+        "states_explored": 99,
+        "depth": 8,
+        "truncated": false,
+        "warnings": [],
+        "runtime_ms": 9.649,
+        "assumptions": "Authorised synthetic scenario. Compromise of the initial asset and possession of named test capabilities are assumed, not observed.",
+        "limitations": "Monotonic capabilities; finite imported rules only. Chains are bounded witnesses, not all paths. Reachability is not exploitability or breach probability."
+      }
+    },
+    {
+      "size": 12,
+      "branching": 1,
+      "seed": 17,
+      "peak_python_bytes": 158995,
+      "result": {
+        "engine_version": "aegis-monotonic-1.0",
+        "rule_versions": {
+          "r00": "1.0",
+          "r01": "1.0",
+          "r02": "1.0",
+          "r03": "1.0",
+          "r04": "1.0",
+          "r05": "1.0",
+          "r06": "1.0",
+          "r07": "1.0",
+          "r08": "1.0",
+          "r09": "1.0",
+          "r10": "1.0",
+          "r11": "1.0"
+        },
+        "evidence_evaluated_at": "2026-10-16T13:53:23.039497+00:00",
+        "limits": {
+          "evidence_at": null,
+          "max_depth": 12,
+          "max_states": 5000,
+          "time_ms": 2000,
+          "top_k": 3,
+          "evidence_policy": "confirmed"
+        },
+        "removed_relationships": [],
+        "reachable_capabilities": [
+          "control:n0",
+          "control:n1",
+          "control:n10",
+          "control:n11",
+          "control:n2",
+          "control:n3",
+          "control:n4",
+          "control:n5",
+          "control:n6",
+          "control:n7",
+          "control:n8",
+          "control:n9",
+          "control:seed"
+        ],
+        "targets": [
+          {
+            "asset_id": "canary",
+            "capability": "control:n11",
+            "weight": 5,
+            "reachable": true,
+            "chains": [
+              [
+                "r00",
+                "r01",
+                "r03",
+                "r11"
+              ],
+              [
+                "r00",
+                "r01",
+                "r02",
+                "r03",
+                "r11"
+              ],
+              [
+                "r00",
+                "r01",
+                "r03",
+                "r05",
+                "r11"
+              ]
+            ]
+          }
+        ],
+        "blocked": [],
+        "applied_rules": [
+          "r00",
+          "r01",
+          "r02",
+          "r03",
+          "r04",
+          "r05",
+          "r06",
+          "r07",
+          "r08",
+          "r09",
+          "r10",
+          "r11"
+        ],
+        "states_explored": 243,
+        "depth": 12,
+        "truncated": false,
+        "warnings": [],
+        "runtime_ms": 40.569,
+        "assumptions": "Authorised synthetic scenario. Compromise of the initial asset and possession of named test capabilities are assumed, not observed.",
+        "limitations": "Monotonic capabilities; finite imported rules only. Chains are bounded witnesses, not all paths. Reachability is not exploitability or breach probability."
+      }
+    },
+    {
+      "size": 12,
+      "branching": 2,
+      "seed": 17,
+      "peak_python_bytes": 692128,
+      "result": {
+        "engine_version": "aegis-monotonic-1.0",
+        "rule_versions": {
+          "r00": "1.0",
+          "r01": "1.0",
+          "r02": "1.0",
+          "r03": "1.0",
+          "r04": "1.0",
+          "r05": "1.0",
+          "r06": "1.0",
+          "r07": "1.0",
+          "r08": "1.0",
+          "r09": "1.0",
+          "r10": "1.0",
+          "r11": "1.0"
+        },
+        "evidence_evaluated_at": "2026-10-16T13:53:23.080852+00:00",
+        "limits": {
+          "evidence_at": null,
+          "max_depth": 12,
+          "max_states": 5000,
+          "time_ms": 2000,
+          "top_k": 3,
+          "evidence_policy": "confirmed"
+        },
+        "removed_relationships": [],
+        "reachable_capabilities": [
+          "control:n0",
+          "control:n1",
+          "control:n10",
+          "control:n11",
+          "control:n2",
+          "control:n3",
+          "control:n4",
+          "control:n5",
+          "control:n6",
+          "control:n7",
+          "control:n8",
+          "control:n9",
+          "control:seed"
+        ],
+        "targets": [
+          {
+            "asset_id": "canary",
+            "capability": "control:n11",
+            "weight": 5,
+            "reachable": true,
+            "chains": [
+              [
+                "r00",
+                "r02",
+                "r11"
+              ],
+              [
+                "r00",
+                "r03",
+                "r11"
+              ],
+              [
+                "r00",
+                "r01",
+                "r02",
+                "r11"
+              ]
+            ]
+          }
+        ],
+        "blocked": [],
+        "applied_rules": [
+          "r00",
+          "r01",
+          "r02",
+          "r03",
+          "r04",
+          "r05",
+          "r06",
+          "r07",
+          "r08",
+          "r09",
+          "r10",
+          "r11"
+        ],
+        "states_explored": 1129,
+        "depth": 12,
+        "truncated": false,
+        "warnings": [],
+        "runtime_ms": 228.303,
+        "assumptions": "Authorised synthetic scenario. Compromise of the initial asset and possession of named test capabilities are assumed, not observed.",
+        "limitations": "Monotonic capabilities; finite imported rules only. Chains are bounded witnesses, not all paths. Reachability is not exploitability or breach probability."
+      }
+    }
+  ],
+  "ablations": {
+    "without_possessed_test_identity": {
+      "engine_version": "aegis-monotonic-1.0",
+      "rule_versions": {
+        "reach-api": "1.0",
+        "read-via-api": "1.0",
+        "reach-admin": "1.0",
+        "read-via-admin": "1.0",
+        "direct-db": "1.0"
+      },
+      "evidence_evaluated_at": "2026-10-16T13:53:23.308869+00:00",
+      "limits": {
+        "evidence_at": null,
+        "max_depth": 12,
+        "max_states": 5000,
+        "time_ms": 2000,
+        "top_k": 3,
+        "evidence_policy": "confirmed"
+      },
+      "removed_relationships": [],
+      "reachable_capabilities": [
+        "control:web",
+        "reach:admin",
+        "reach:api",
+        "reach:db"
+      ],
+      "targets": [
+        {
+          "asset_id": "canary",
+          "capability": "read:canary",
+          "weight": 5,
+          "reachable": false,
+          "chains": []
+        }
+      ],
+      "blocked": [
+        {
+          "rule_id": "read-via-api",
+          "removed_relationships": [],
+          "unaccepted_evidence": [],
+          "missing_capabilities_any": [
+            [
+              "identity:test-user"
+            ]
+          ],
+          "note": "Not fired within configured search; union of reached capabilities is diagnostic only."
+        },
+        {
+          "rule_id": "read-via-admin",
+          "removed_relationships": [],
+          "unaccepted_evidence": [],
+          "missing_capabilities_any": [
+            [
+              "session:admin"
+            ]
+          ],
+          "note": "Not fired within configured search; union of reached capabilities is diagnostic only."
+        }
+      ],
+      "applied_rules": [
+        "direct-db",
+        "reach-admin",
+        "reach-api"
+      ],
+      "states_explored": 8,
+      "depth": 3,
+      "truncated": false,
+      "warnings": [],
+      "runtime_ms": 0.162,
+      "assumptions": "Authorised synthetic scenario. Compromise of the initial asset and possession of named test capabilities are assumed, not observed.",
+      "limitations": "Monotonic capabilities; finite imported rules only. Chains are bounded witnesses, not all paths. Reachability is not exploitability or breach probability."
+    },
+    "topology_only_ignoring_identity_and_permission": {
+      "engine_version": "aegis-monotonic-1.0",
+      "rule_versions": {
+        "reach-api": "1.0",
+        "read-via-api": "1.0",
+        "reach-admin": "1.0",
+        "read-via-admin": "1.0",
+        "direct-db": "1.0"
+      },
+      "evidence_evaluated_at": "2026-10-16T13:53:23.308869+00:00",
+      "limits": {
+        "evidence_at": null,
+        "max_depth": 12,
+        "max_states": 5000,
+        "time_ms": 2000,
+        "top_k": 3,
+        "evidence_policy": "confirmed"
+      },
+      "removed_relationships": [],
+      "reachable_capabilities": [
+        "control:web",
+        "reach:admin",
+        "reach:api",
+        "reach:db",
+        "read:canary"
+      ],
+      "targets": [
+        {
+          "asset_id": "canary",
+          "capability": "read:canary",
+          "weight": 5,
+          "reachable": true,
+          "chains": [
+            [
+              "reach-api",
+              "read-via-api"
+            ],
+            [
+              "direct-db",
+              "reach-api",
+              "read-via-api"
+            ],
+            [
+              "reach-admin",
+              "reach-api",
+              "read-via-api"
+            ]
+          ]
+        }
+      ],
+      "blocked": [
+        {
+          "rule_id": "read-via-admin",
+          "removed_relationships": [],
+          "unaccepted_evidence": [],
+          "missing_capabilities_any": [
+            [
+              "session:admin"
+            ]
+          ],
+          "note": "Not fired within configured search; union of reached capabilities is diagnostic only."
+        }
+      ],
+      "applied_rules": [
+        "direct-db",
+        "reach-admin",
+        "reach-api",
+        "read-via-api"
+      ],
+      "states_explored": 12,
+      "depth": 4,
+      "truncated": false,
+      "warnings": [],
+      "runtime_ms": 0.157,
+      "assumptions": "Authorised synthetic scenario. Compromise of the initial asset and possession of named test capabilities are assumed, not observed.",
+      "limitations": "Monotonic capabilities; finite imported rules only. Chains are bounded witnesses, not all paths. Reachability is not exploitability or breach probability."
+    },
+    "missing_evidence_strict": {
+      "engine_version": "aegis-monotonic-1.0",
+      "rule_versions": {
+        "reach-api": "1.0",
+        "read-via-api": "1.0",
+        "reach-admin": "1.0",
+        "read-via-admin": "1.0",
+        "direct-db": "1.0"
+      },
+      "evidence_evaluated_at": "2026-10-16T13:53:23.308869+00:00",
+      "limits": {
+        "evidence_at": null,
+        "max_depth": 12,
+        "max_states": 5000,
+        "time_ms": 2000,
+        "top_k": 3,
+        "evidence_policy": "confirmed"
+      },
+      "removed_relationships": [],
+      "reachable_capabilities": [
+        "control:web"
+      ],
+      "targets": [
+        {
+          "asset_id": "canary",
+          "capability": "read:canary",
+          "weight": 5,
+          "reachable": false,
+          "chains": []
+        }
+      ],
+      "blocked": [
+        {
+          "rule_id": "reach-api",
+          "removed_relationships": [],
+          "unaccepted_evidence": [
+            "lab-design"
+          ],
+          "missing_capabilities_any": [
+            []
+          ],
+          "note": "Not fired within configured search; union of reached capabilities is diagnostic only."
+        },
+        {
+          "rule_id": "read-via-api",
+          "removed_relationships": [],
+          "unaccepted_evidence": [
+            "lab-design"
+          ],
+          "missing_capabilities_any": [
+            [
+              "identity:test-user",
+              "reach:api"
+            ]
+          ],
+          "note": "Not fired within configured search; union of reached capabilities is diagnostic only."
+        },
+        {
+          "rule_id": "reach-admin",
+          "removed_relationships": [],
+          "unaccepted_evidence": [
+            "lab-design"
+          ],
+          "missing_capabilities_any": [
+            []
+          ],
+          "note": "Not fired within configured search; union of reached capabilities is diagnostic only."
+        },
+        {
+          "rule_id": "read-via-admin",
+          "removed_relationships": [],
+          "unaccepted_evidence": [
+            "lab-design"
+          ],
+          "missing_capabilities_any": [
+            [
+              "reach:admin",
+              "session:admin"
+            ]
+          ],
+          "note": "Not fired within configured search; union of reached capabilities is diagnostic only."
+        },
+        {
+          "rule_id": "direct-db",
+          "removed_relationships": [],
+          "unaccepted_evidence": [
+            "lab-design"
+          ],
+          "missing_capabilities_any": [
+            []
+          ],
+          "note": "Not fired within configured search; union of reached capabilities is diagnostic only."
+        }
+      ],
+      "applied_rules": [],
+      "states_explored": 1,
+      "depth": 0,
+      "truncated": false,
+      "warnings": [],
+      "runtime_ms": 0.066,
+      "assumptions": "Authorised synthetic scenario. Compromise of the initial asset and possession of named test capabilities are assumed, not observed.",
+      "limitations": "Monotonic capabilities; finite imported rules only. Chains are bounded witnesses, not all paths. Reachability is not exploitability or breach probability."
+    },
+    "missing_evidence_optimistic": {
+      "engine_version": "aegis-monotonic-1.0",
+      "rule_versions": {
+        "reach-api": "1.0",
+        "read-via-api": "1.0",
+        "reach-admin": "1.0",
+        "read-via-admin": "1.0",
+        "direct-db": "1.0"
+      },
+      "evidence_evaluated_at": "2026-10-16T13:53:23.308869+00:00",
+      "limits": {
+        "evidence_at": null,
+        "max_depth": 12,
+        "max_states": 5000,
+        "time_ms": 2000,
+        "top_k": 3,
+        "evidence_policy": "optimistic"
+      },
+      "removed_relationships": [],
+      "reachable_capabilities": [
+        "control:web",
+        "reach:admin",
+        "reach:api",
+        "reach:db"
+      ],
+      "targets": [
+        {
+          "asset_id": "canary",
+          "capability": "read:canary",
+          "weight": 5,
+          "reachable": false,
+          "chains": []
+        }
+      ],
+      "blocked": [
+        {
+          "rule_id": "read-via-api",
+          "removed_relationships": [],
+          "unaccepted_evidence": [],
+          "missing_capabilities_any": [
+            [
+              "identity:test-user"
+            ]
+          ],
+          "note": "Not fired within configured search; union of reached capabilities is diagnostic only."
+        },
+        {
+          "rule_id": "read-via-admin",
+          "removed_relationships": [],
+          "unaccepted_evidence": [],
+          "missing_capabilities_any": [
+            [
+              "session:admin"
+            ]
+          ],
+          "note": "Not fired within configured search; union of reached capabilities is diagnostic only."
+        }
+      ],
+      "applied_rules": [
+        "direct-db",
+        "reach-admin",
+        "reach-api"
+      ],
+      "states_explored": 8,
+      "depth": 3,
+      "truncated": false,
+      "warnings": [],
+      "runtime_ms": 0.101,
+      "assumptions": "Authorised synthetic scenario. Compromise of the initial asset and possession of named test capabilities are assumed, not observed.",
+      "limitations": "Monotonic capabilities; finite imported rules only. Chains are bounded witnesses, not all paths. Reachability is not exploitability or breach probability."
+    }
+  },
+  "limitations": "Topology-only deliberately removes required identity/permission modelling and is an ablation, not the production engine. Timings include Python tracemalloc overhead. Not representative real network performance."
+}

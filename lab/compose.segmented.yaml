@@ -1,0 +1,4 @@
+# A fixed lab-only configuration change. No app/worker has orchestration access.
+services:
+  web:
+    networks: !override [edge, internal]

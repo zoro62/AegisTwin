@@ -1,0 +1,594 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>AegisTwin evidence report</title><style>body{font:15px/1.6 system-ui;margin:40px auto;max-width:1050px;padding:0 25px;color:#182b36}h1,h2{color:#174e4c}table{border-collapse:collapse;width:100%;margin:18px 0}th,td{border:1px solid #ccd5d9;padding:10px;text-align:left;vertical-align:top}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:11px}small{color:#52636d}@media print{details{display:block}body{margin:0}}</style></head><body><h1>AegisTwin evidence report</h1><p>Finite evidence-backed simulation. Reachability does not establish exploitability or breach probability.</p><table><thead><tr><th>Run</th><th>Snapshot</th><th>Scenario</th></tr></thead><tbody><tr><td>9b723d31-f455-45fd-a6ea-29127fe10964</td><td>6b15896a-8039-4fc0-ad42-ee3874354221</td><td>b976823a-66ed-495f-b86b-a9070f9ba575</td></tr></tbody></table><p>Snapshot SHA-256: 3b951b8dd8dcf93fb9ee5774fe4f5ae9fb46f50649cbd34b1c7628ad22139e9f</p><h2>Initial attacker assumptions</h2><p>Authorised synthetic scenario. Compromise of the initial asset and possession of named test capabilities are assumed, not observed.</p><table><thead><tr><th>Initial capabilities</th></tr></thead><tbody><tr><td>control:web</td></tr><tr><td>session:admin</td></tr></tbody></table><h2>Critical targets and supporting chains</h2><table><thead><tr><th>Asset</th><th>Capability</th><th>Reached</th><th>Bounded witness chains</th></tr></thead><tbody><tr><td>canary</td><td>read:canary</td><td>True</td><td>reach-admin → read-via-admin; direct-db → reach-admin → read-via-admin; reach-admin → reach-api → read-via-admin</td></tr></tbody></table><table><thead><tr><th>Transition / version</th><th>AND/OR prerequisites</th><th>Required relationships</th><th>Evidence / assumptions</th></tr></thead><tbody><tr><td>direct-db / 1.0</td><td>control:web</td><td>web-db</td><td>lab-design — Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred.</td></tr><tr><td>reach-admin / 1.0</td><td>control:web</td><td>web-admin</td><td>lab-design — Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred.</td></tr><tr><td>reach-api / 1.0</td><td>control:web</td><td>web-api</td><td>lab-design — Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred.</td></tr><tr><td>read-via-admin / 1.0</td><td>reach:admin AND session:admin</td><td>admin-data</td><td>lab-design — Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred.</td></tr></tbody></table><h2>Validation dimensions</h2><table><thead><tr><th>Dimension</th><th>Events</th><th>Compared</th><th>Discrepancies</th><th>Real observations</th><th>Status</th></tr></thead><tbody><tr><td>connectivity</td><td>3</td><td>3</td><td>0</td><td>3</td><td>observations available</td></tr><tr><td>permission</td><td>0</td><td>0</td><td>0</td><td>0</td><td>not tested</td></tr><tr><td>synthetic_transition</td><td>1</td><td>1</td><td>0</td><td>0</td><td>observations available</td></tr><tr><td>canary</td><td>0</td><td>0</td><td>0</td><td>0</td><td>not tested</td></tr></tbody></table><p>Only explicitly mapped observations are compared. Ambiguity is preserved. Missing events prove nothing. Failed attempts may reflect unavailable services or instrumentation limits; TCP agreement does not validate compromise. Synthetic transitions remain separate from real observations.</p><h2>Evidence and uncertainty</h2><table><thead><tr><th>Evidence</th><th>Source / method</th><th>Confidence</th><th>Collected / expires</th><th>Note</th></tr></thead><tbody><tr><td>lab-design</td><td>bundled-lab-v2 / asserted</td><td>confirmed</td><td>2026-10-16T13:58:02.321855Z / 2026-11-15T13:58:02.321855Z</td><td>Synthetic lab design assertion, not a successful connectivity probe or exploit.</td></tr></tbody></table><h2>Search bounds and limitations</h2><pre>{
+  &quot;engine&quot;: &quot;aegis-monotonic-1.0&quot;,
+  &quot;limits&quot;: {
+    &quot;evidence_at&quot;: null,
+    &quot;max_depth&quot;: 12,
+    &quot;max_states&quot;: 5000,
+    &quot;time_ms&quot;: 2000,
+    &quot;top_k&quot;: 3,
+    &quot;evidence_policy&quot;: &quot;confirmed&quot;
+  },
+  &quot;states_explored&quot;: 12,
+  &quot;runtime_ms&quot;: 0.347,
+  &quot;truncated&quot;: false,
+  &quot;warnings&quot;: [],
+  &quot;limitations&quot;: &quot;Monotonic capabilities; finite imported rules only. Chains are bounded witnesses, not all paths. Reachability is not exploitability or breach probability.&quot;
+}</pre><details><summary>Complete reproducible input and result appendix</summary><pre>{
+  &quot;id&quot;: &quot;9b723d31-f455-45fd-a6ea-29127fe10964&quot;,
+  &quot;kind&quot;: &quot;evaluation&quot;,
+  &quot;created_at&quot;: &quot;2026-10-16T13:58:10.974635+00:00&quot;,
+  &quot;content_hash&quot;: &quot;eb07125b18781d206cb2859843f791c45a37ed021b1251b72946c971ba8a26d4&quot;,
+  &quot;data&quot;: {
+    &quot;scenario_id&quot;: &quot;b976823a-66ed-495f-b86b-a9070f9ba575&quot;,
+    &quot;snapshot_id&quot;: &quot;6b15896a-8039-4fc0-ad42-ee3874354221&quot;,
+    &quot;snapshot_hash&quot;: &quot;3b951b8dd8dcf93fb9ee5774fe4f5ae9fb46f50649cbd34b1c7628ad22139e9f&quot;,
+    &quot;request&quot;: {
+      &quot;scenario_id&quot;: &quot;b976823a-66ed-495f-b86b-a9070f9ba575&quot;,
+      &quot;limits&quot;: {
+        &quot;evidence_at&quot;: null,
+        &quot;max_depth&quot;: 12,
+        &quot;max_states&quot;: 5000,
+        &quot;time_ms&quot;: 2000,
+        &quot;top_k&quot;: 3,
+        &quot;evidence_policy&quot;: &quot;confirmed&quot;
+      },
+      &quot;removed&quot;: []
+    },
+    &quot;result&quot;: {
+      &quot;analysis&quot;: {
+        &quot;engine_version&quot;: &quot;aegis-monotonic-1.0&quot;,
+        &quot;rule_versions&quot;: {
+          &quot;reach-api&quot;: &quot;1.0&quot;,
+          &quot;read-via-api&quot;: &quot;1.0&quot;,
+          &quot;reach-admin&quot;: &quot;1.0&quot;,
+          &quot;read-via-admin&quot;: &quot;1.0&quot;,
+          &quot;direct-db&quot;: &quot;1.0&quot;
+        },
+        &quot;evidence_evaluated_at&quot;: &quot;2026-10-16T13:58:10.956811+00:00&quot;,
+        &quot;limits&quot;: {
+          &quot;evidence_at&quot;: null,
+          &quot;max_depth&quot;: 12,
+          &quot;max_states&quot;: 5000,
+          &quot;time_ms&quot;: 2000,
+          &quot;top_k&quot;: 3,
+          &quot;evidence_policy&quot;: &quot;confirmed&quot;
+        },
+        &quot;removed_relationships&quot;: [],
+        &quot;reachable_capabilities&quot;: [
+          &quot;control:web&quot;,
+          &quot;reach:admin&quot;,
+          &quot;reach:api&quot;,
+          &quot;reach:db&quot;,
+          &quot;read:canary&quot;,
+          &quot;session:admin&quot;
+        ],
+        &quot;targets&quot;: [
+          {
+            &quot;asset_id&quot;: &quot;canary&quot;,
+            &quot;capability&quot;: &quot;read:canary&quot;,
+            &quot;weight&quot;: 5,
+            &quot;reachable&quot;: true,
+            &quot;chains&quot;: [
+              [
+                &quot;reach-admin&quot;,
+                &quot;read-via-admin&quot;
+              ],
+              [
+                &quot;direct-db&quot;,
+                &quot;reach-admin&quot;,
+                &quot;read-via-admin&quot;
+              ],
+              [
+                &quot;reach-admin&quot;,
+                &quot;reach-api&quot;,
+                &quot;read-via-admin&quot;
+              ]
+            ]
+          }
+        ],
+        &quot;blocked&quot;: [
+          {
+            &quot;rule_id&quot;: &quot;read-via-api&quot;,
+            &quot;removed_relationships&quot;: [],
+            &quot;unaccepted_evidence&quot;: [],
+            &quot;missing_capabilities_any&quot;: [
+              [
+                &quot;identity:test-user&quot;
+              ]
+            ],
+            &quot;note&quot;: &quot;Not fired within configured search; union of reached capabilities is diagnostic only.&quot;
+          }
+        ],
+        &quot;applied_rules&quot;: [
+          &quot;direct-db&quot;,
+          &quot;reach-admin&quot;,
+          &quot;reach-api&quot;,
+          &quot;read-via-admin&quot;
+        ],
+        &quot;states_explored&quot;: 12,
+        &quot;depth&quot;: 4,
+        &quot;truncated&quot;: false,
+        &quot;warnings&quot;: [],
+        &quot;runtime_ms&quot;: 0.347,
+        &quot;assumptions&quot;: &quot;Authorised synthetic scenario. Compromise of the initial asset and possession of named test capabilities are assumed, not observed.&quot;,
+        &quot;limitations&quot;: &quot;Monotonic capabilities; finite imported rules only. Chains are bounded witnesses, not all paths. Reachability is not exploitability or breach probability.&quot;
+      },
+      &quot;validation&quot;: {
+        &quot;dimensions&quot;: {
+          &quot;connectivity&quot;: {
+            &quot;events&quot;: 3,
+            &quot;compared&quot;: 3,
+            &quot;discrepancies&quot;: 0,
+            &quot;real_observations&quot;: 3,
+            &quot;status&quot;: &quot;observations available&quot;
+          },
+          &quot;permission&quot;: {
+            &quot;events&quot;: 0,
+            &quot;compared&quot;: 0,
+            &quot;discrepancies&quot;: 0,
+            &quot;real_observations&quot;: 0,
+            &quot;status&quot;: &quot;not tested&quot;
+          },
+          &quot;synthetic_transition&quot;: {
+            &quot;events&quot;: 1,
+            &quot;compared&quot;: 1,
+            &quot;discrepancies&quot;: 0,
+            &quot;real_observations&quot;: 0,
+            &quot;status&quot;: &quot;observations available&quot;
+          },
+          &quot;canary&quot;: {
+            &quot;events&quot;: 0,
+            &quot;compared&quot;: 0,
+            &quot;discrepancies&quot;: 0,
+            &quot;real_observations&quot;: 0,
+            &quot;status&quot;: &quot;not tested&quot;
+          }
+        },
+        &quot;comparisons&quot;: [
+          {
+            &quot;event_id&quot;: &quot;bundled-synthetic:demo-api-reach&quot;,
+            &quot;dimension&quot;: &quot;synthetic_transition&quot;,
+            &quot;simulation&quot;: true,
+            &quot;candidates&quot;: [
+              &quot;reach-api&quot;
+            ],
+            &quot;predicted&quot;: true,
+            &quot;observed&quot;: true,
+            &quot;agrees&quot;: true,
+            &quot;status&quot;: &quot;compared&quot;
+          },
+          {
+            &quot;event_id&quot;: &quot;bundled-web-probe:20261016T134634276912Z:web-admin&quot;,
+            &quot;dimension&quot;: &quot;connectivity&quot;,
+            &quot;simulation&quot;: false,
+            &quot;candidates&quot;: [
+              &quot;web-admin&quot;
+            ],
+            &quot;predicted&quot;: true,
+            &quot;observed&quot;: true,
+            &quot;agrees&quot;: true,
+            &quot;status&quot;: &quot;compared&quot;
+          },
+          {
+            &quot;event_id&quot;: &quot;bundled-web-probe:20261016T134634276912Z:web-api&quot;,
+            &quot;dimension&quot;: &quot;connectivity&quot;,
+            &quot;simulation&quot;: false,
+            &quot;candidates&quot;: [
+              &quot;web-api&quot;
+            ],
+            &quot;predicted&quot;: true,
+            &quot;observed&quot;: true,
+            &quot;agrees&quot;: true,
+            &quot;status&quot;: &quot;compared&quot;
+          },
+          {
+            &quot;event_id&quot;: &quot;bundled-web-probe:20261016T134634276912Z:web-db&quot;,
+            &quot;dimension&quot;: &quot;connectivity&quot;,
+            &quot;simulation&quot;: false,
+            &quot;candidates&quot;: [
+              &quot;web-db&quot;
+            ],
+            &quot;predicted&quot;: true,
+            &quot;observed&quot;: true,
+            &quot;agrees&quot;: true,
+            &quot;status&quot;: &quot;compared&quot;
+          }
+        ],
+        &quot;limitations&quot;: &quot;Only explicitly mapped observations are compared. Ambiguity is preserved. Missing events prove nothing. Failed attempts may reflect unavailable services or instrumentation limits; TCP agreement does not validate compromise. Synthetic transitions remain separate from real observations.&quot;
+      },
+      &quot;dataset&quot;: [
+        {
+          &quot;schema_version&quot;: &quot;1.0&quot;,
+          &quot;id&quot;: &quot;demo-api-reach&quot;,
+          &quot;source&quot;: &quot;bundled-synthetic&quot;,
+          &quot;source_timestamp&quot;: &quot;2026-01-01T12:00:00Z&quot;,
+          &quot;asset_id&quot;: &quot;api&quot;,
+          &quot;principal_id&quot;: null,
+          &quot;event_type&quot;: &quot;synthetic_transition&quot;,
+          &quot;fields&quot;: {
+            &quot;rule_id&quot;: &quot;reach-api&quot;,
+            &quot;success&quot;: true
+          },
+          &quot;simulation&quot;: true,
+          &quot;provenance&quot;: &quot;Harmless deterministic demonstration event; not an observed attack.&quot;
+        },
+        {
+          &quot;schema_version&quot;: &quot;1.0&quot;,
+          &quot;id&quot;: &quot;20261016T134634276912Z:web-admin&quot;,
+          &quot;source&quot;: &quot;bundled-web-probe&quot;,
+          &quot;source_timestamp&quot;: &quot;2026-10-16T13:46:34.276912Z&quot;,
+          &quot;asset_id&quot;: &quot;admin&quot;,
+          &quot;principal_id&quot;: null,
+          &quot;event_type&quot;: &quot;connectivity&quot;,
+          &quot;fields&quot;: {
+            &quot;relationship_id&quot;: &quot;web-admin&quot;,
+            &quot;success&quot;: true,
+            &quot;error&quot;: &quot;&quot;,
+            &quot;runtime_microseconds&quot;: 2448
+          },
+          &quot;simulation&quot;: false,
+          &quot;provenance&quot;: &quot;User-uploaded output from fixed bundled TCP checks. No cryptographic collector attestation. TCP connection only. No authentication or compromise was tested.&quot;
+        },
+        {
+          &quot;schema_version&quot;: &quot;1.0&quot;,
+          &quot;id&quot;: &quot;20261016T134634276912Z:web-api&quot;,
+          &quot;source&quot;: &quot;bundled-web-probe&quot;,
+          &quot;source_timestamp&quot;: &quot;2026-10-16T13:46:34.276912Z&quot;,
+          &quot;asset_id&quot;: &quot;api&quot;,
+          &quot;principal_id&quot;: null,
+          &quot;event_type&quot;: &quot;connectivity&quot;,
+          &quot;fields&quot;: {
+            &quot;relationship_id&quot;: &quot;web-api&quot;,
+            &quot;success&quot;: true,
+            &quot;error&quot;: &quot;&quot;,
+            &quot;runtime_microseconds&quot;: 5627
+          },
+          &quot;simulation&quot;: false,
+          &quot;provenance&quot;: &quot;User-uploaded output from fixed bundled TCP checks. No cryptographic collector attestation. TCP connection only. No authentication or compromise was tested.&quot;
+        },
+        {
+          &quot;schema_version&quot;: &quot;1.0&quot;,
+          &quot;id&quot;: &quot;20261016T134634276912Z:web-db&quot;,
+          &quot;source&quot;: &quot;bundled-web-probe&quot;,
+          &quot;source_timestamp&quot;: &quot;2026-10-16T13:46:34.276912Z&quot;,
+          &quot;asset_id&quot;: &quot;db&quot;,
+          &quot;principal_id&quot;: null,
+          &quot;event_type&quot;: &quot;connectivity&quot;,
+          &quot;fields&quot;: {
+            &quot;relationship_id&quot;: &quot;web-db&quot;,
+            &quot;success&quot;: true,
+            &quot;error&quot;: &quot;&quot;,
+            &quot;runtime_microseconds&quot;: 937
+          },
+          &quot;simulation&quot;: false,
+          &quot;provenance&quot;: &quot;User-uploaded output from fixed bundled TCP checks. No cryptographic collector attestation. TCP connection only. No authentication or compromise was tested.&quot;
+        }
+      ]
+    }
+  },
+  &quot;scenario&quot;: {
+    &quot;id&quot;: &quot;b976823a-66ed-495f-b86b-a9070f9ba575&quot;,
+    &quot;kind&quot;: &quot;scenario&quot;,
+    &quot;created_at&quot;: &quot;2026-10-16T13:58:03.243710+00:00&quot;,
+    &quot;content_hash&quot;: &quot;c406f18283e6b32ab4e39e9f2cd0cb1c1bb4458d09da9a313da0dc986d571d8b&quot;,
+    &quot;data&quot;: {
+      &quot;schema_version&quot;: &quot;1.0&quot;,
+      &quot;name&quot;: &quot;Excessive network exposure \u00b7 counterfactual&quot;,
+      &quot;snapshot_id&quot;: &quot;6b15896a-8039-4fc0-ad42-ee3874354221&quot;,
+      &quot;initial&quot;: [
+        &quot;control:web&quot;,
+        &quot;session:admin&quot;
+      ],
+      &quot;assumptions&quot;: &quot;Authorised synthetic scenario. Compromise of the initial asset and possession of named test capabilities are assumed, not observed.&quot;,
+      &quot;targets&quot;: [
+        {
+          &quot;asset_id&quot;: &quot;canary&quot;,
+          &quot;capability&quot;: &quot;read:canary&quot;,
+          &quot;weight&quot;: 5
+        }
+      ],
+      &quot;rules&quot;: [
+        {
+          &quot;id&quot;: &quot;reach-api&quot;,
+          &quot;version&quot;: &quot;1.0&quot;,
+          &quot;label&quot;: &quot;Reach internal API&quot;,
+          &quot;requires_any&quot;: [
+            [
+              &quot;control:web&quot;
+            ]
+          ],
+          &quot;relationships&quot;: [
+            &quot;web-api&quot;
+          ],
+          &quot;effects&quot;: [
+            &quot;reach:api&quot;
+          ],
+          &quot;evidence&quot;: [
+            &quot;lab-design&quot;
+          ],
+          &quot;assumptions&quot;: &quot;Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred.&quot;
+        },
+        {
+          &quot;id&quot;: &quot;read-via-api&quot;,
+          &quot;version&quot;: &quot;1.0&quot;,
+          &quot;label&quot;: &quot;Read canary with overbroad test identity&quot;,
+          &quot;requires_any&quot;: [
+            [
+              &quot;reach:api&quot;,
+              &quot;identity:test-user&quot;
+            ]
+          ],
+          &quot;relationships&quot;: [
+            &quot;user-auth&quot;,
+            &quot;user-read&quot;,
+            &quot;api-db&quot;,
+            &quot;db-canary&quot;
+          ],
+          &quot;effects&quot;: [
+            &quot;read:canary&quot;
+          ],
+          &quot;evidence&quot;: [
+            &quot;lab-design&quot;
+          ],
+          &quot;assumptions&quot;: &quot;Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred.&quot;
+        },
+        {
+          &quot;id&quot;: &quot;reach-admin&quot;,
+          &quot;version&quot;: &quot;1.0&quot;,
+          &quot;label&quot;: &quot;Reach exposed admin interface&quot;,
+          &quot;requires_any&quot;: [
+            [
+              &quot;control:web&quot;
+            ]
+          ],
+          &quot;relationships&quot;: [
+            &quot;web-admin&quot;
+          ],
+          &quot;effects&quot;: [
+            &quot;reach:admin&quot;
+          ],
+          &quot;evidence&quot;: [
+            &quot;lab-design&quot;
+          ],
+          &quot;assumptions&quot;: &quot;Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred.&quot;
+        },
+        {
+          &quot;id&quot;: &quot;read-via-admin&quot;,
+          &quot;version&quot;: &quot;1.0&quot;,
+          &quot;label&quot;: &quot;Synthetic admin session accesses canary&quot;,
+          &quot;requires_any&quot;: [
+            [
+              &quot;reach:admin&quot;,
+              &quot;session:admin&quot;
+            ]
+          ],
+          &quot;relationships&quot;: [
+            &quot;admin-data&quot;
+          ],
+          &quot;effects&quot;: [
+            &quot;read:canary&quot;
+          ],
+          &quot;evidence&quot;: [
+            &quot;lab-design&quot;
+          ],
+          &quot;assumptions&quot;: &quot;Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred.&quot;
+        },
+        {
+          &quot;id&quot;: &quot;direct-db&quot;,
+          &quot;version&quot;: &quot;1.0&quot;,
+          &quot;label&quot;: &quot;Reach overly exposed database&quot;,
+          &quot;requires_any&quot;: [
+            [
+              &quot;control:web&quot;
+            ]
+          ],
+          &quot;relationships&quot;: [
+            &quot;web-db&quot;
+          ],
+          &quot;effects&quot;: [
+            &quot;reach:db&quot;
+          ],
+          &quot;evidence&quot;: [
+            &quot;lab-design&quot;
+          ],
+          &quot;assumptions&quot;: &quot;Initial compromise and test identity/session are explicit simulated assumptions. No vulnerability or exploit is inferred.&quot;
+        }
+      ]
+    }
+  },
+  &quot;snapshot&quot;: {
+    &quot;id&quot;: &quot;6b15896a-8039-4fc0-ad42-ee3874354221&quot;,
+    &quot;kind&quot;: &quot;snapshot&quot;,
+    &quot;created_at&quot;: &quot;2026-10-16T13:58:02.322862+00:00&quot;,
+    &quot;content_hash&quot;: &quot;3b951b8dd8dcf93fb9ee5774fe4f5ae9fb46f50649cbd34b1c7628ad22139e9f&quot;,
+    &quot;data&quot;: {
+      &quot;schema_version&quot;: &quot;1.0&quot;,
+      &quot;name&quot;: &quot;AegisTwin isolated lab v2&quot;,
+      &quot;assets&quot;: [
+        {
+          &quot;id&quot;: &quot;proxy&quot;,
+          &quot;label&quot;: &quot;Reverse proxy&quot;,
+          &quot;kind&quot;: &quot;service&quot;,
+          &quot;segment&quot;: &quot;edge&quot;,
+          &quot;critical&quot;: false
+        },
+        {
+          &quot;id&quot;: &quot;web&quot;,
+          &quot;label&quot;: &quot;Public demo app&quot;,
+          &quot;kind&quot;: &quot;service&quot;,
+          &quot;segment&quot;: &quot;edge&quot;,
+          &quot;critical&quot;: false
+        },
+        {
+          &quot;id&quot;: &quot;api&quot;,
+          &quot;label&quot;: &quot;Internal API&quot;,
+          &quot;kind&quot;: &quot;service&quot;,
+          &quot;segment&quot;: &quot;internal&quot;,
+          &quot;critical&quot;: false
+        },
+        {
+          &quot;id&quot;: &quot;db&quot;,
+          &quot;label&quot;: &quot;Synthetic database&quot;,
+          &quot;kind&quot;: &quot;database&quot;,
+          &quot;segment&quot;: &quot;data&quot;,
+          &quot;critical&quot;: false
+        },
+        {
+          &quot;id&quot;: &quot;admin&quot;,
+          &quot;label&quot;: &quot;Administration&quot;,
+          &quot;kind&quot;: &quot;admin&quot;,
+          &quot;segment&quot;: &quot;management&quot;,
+          &quot;critical&quot;: false
+        },
+        {
+          &quot;id&quot;: &quot;test-user&quot;,
+          &quot;label&quot;: &quot;Test application identity&quot;,
+          &quot;kind&quot;: &quot;principal&quot;,
+          &quot;segment&quot;: &quot;identity&quot;,
+          &quot;critical&quot;: false
+        },
+        {
+          &quot;id&quot;: &quot;canary&quot;,
+          &quot;label&quot;: &quot;Canary records&quot;,
+          &quot;kind&quot;: &quot;resource&quot;,
+          &quot;segment&quot;: &quot;data&quot;,
+          &quot;critical&quot;: true
+        },
+        {
+          &quot;id&quot;: &quot;collector&quot;,
+          &quot;label&quot;: &quot;Telemetry collector&quot;,
+          &quot;kind&quot;: &quot;service&quot;,
+          &quot;segment&quot;: &quot;internal&quot;,
+          &quot;critical&quot;: false
+        },
+        {
+          &quot;id&quot;: &quot;edge&quot;,
+          &quot;label&quot;: &quot;Edge segment&quot;,
+          &quot;kind&quot;: &quot;segment&quot;,
+          &quot;segment&quot;: &quot;edge&quot;,
+          &quot;critical&quot;: false
+        },
+        {
+          &quot;id&quot;: &quot;internal&quot;,
+          &quot;label&quot;: &quot;Internal segment&quot;,
+          &quot;kind&quot;: &quot;segment&quot;,
+          &quot;segment&quot;: &quot;internal&quot;,
+          &quot;critical&quot;: false
+        }
+      ],
+      &quot;evidence&quot;: [
+        {
+          &quot;id&quot;: &quot;lab-design&quot;,
+          &quot;source&quot;: &quot;bundled-lab-v2&quot;,
+          &quot;collected_at&quot;: &quot;2026-10-16T13:58:02.321855Z&quot;,
+          &quot;expires_at&quot;: &quot;2026-11-15T13:58:02.321855Z&quot;,
+          &quot;confidence&quot;: &quot;confirmed&quot;,
+          &quot;method&quot;: &quot;asserted&quot;,
+          &quot;note&quot;: &quot;Synthetic lab design assertion, not a successful connectivity probe or exploit.&quot;
+        }
+      ],
+      &quot;relationships&quot;: [
+        {
+          &quot;id&quot;: &quot;proxy-web&quot;,
+          &quot;source&quot;: &quot;proxy&quot;,
+          &quot;target&quot;: &quot;web&quot;,
+          &quot;kind&quot;: &quot;network&quot;,
+          &quot;evidence&quot;: [
+            &quot;lab-design&quot;
+          ],
+          &quot;essential&quot;: true
+        },
+        {
+          &quot;id&quot;: &quot;web-api&quot;,
+          &quot;source&quot;: &quot;web&quot;,
+          &quot;target&quot;: &quot;api&quot;,
+          &quot;kind&quot;: &quot;network&quot;,
+          &quot;evidence&quot;: [
+            &quot;lab-design&quot;
+          ],
+          &quot;essential&quot;: true
+        },
+        {
+          &quot;id&quot;: &quot;api-db&quot;,
+          &quot;source&quot;: &quot;api&quot;,
+          &quot;target&quot;: &quot;db&quot;,
+          &quot;kind&quot;: &quot;network&quot;,
+          &quot;evidence&quot;: [
+            &quot;lab-design&quot;
+          ],
+          &quot;essential&quot;: true
+        },
+        {
+          &quot;id&quot;: &quot;web-admin&quot;,
+          &quot;source&quot;: &quot;web&quot;,
+          &quot;target&quot;: &quot;admin&quot;,
+          &quot;kind&quot;: &quot;network&quot;,
+          &quot;evidence&quot;: [
+            &quot;lab-design&quot;
+          ],
+          &quot;essential&quot;: false
+        },
+        {
+          &quot;id&quot;: &quot;web-db&quot;,
+          &quot;source&quot;: &quot;web&quot;,
+          &quot;target&quot;: &quot;db&quot;,
+          &quot;kind&quot;: &quot;network&quot;,
+          &quot;evidence&quot;: [
+            &quot;lab-design&quot;
+          ],
+          &quot;essential&quot;: false
+        },
+        {
+          &quot;id&quot;: &quot;user-auth&quot;,
+          &quot;source&quot;: &quot;test-user&quot;,
+          &quot;target&quot;: &quot;api&quot;,
+          &quot;kind&quot;: &quot;authentication&quot;,
+          &quot;evidence&quot;: [
+            &quot;lab-design&quot;
+          ],
+          &quot;essential&quot;: false
+        },
+        {
+          &quot;id&quot;: &quot;user-read&quot;,
+          &quot;source&quot;: &quot;test-user&quot;,
+          &quot;target&quot;: &quot;canary&quot;,
+          &quot;kind&quot;: &quot;permission&quot;,
+          &quot;evidence&quot;: [
+            &quot;lab-design&quot;
+          ],
+          &quot;essential&quot;: false
+        },
+        {
+          &quot;id&quot;: &quot;admin-data&quot;,
+          &quot;source&quot;: &quot;admin&quot;,
+          &quot;target&quot;: &quot;canary&quot;,
+          &quot;kind&quot;: &quot;permission&quot;,
+          &quot;evidence&quot;: [
+            &quot;lab-design&quot;
+          ],
+          &quot;essential&quot;: false
+        },
+        {
+          &quot;id&quot;: &quot;db-canary&quot;,
+          &quot;source&quot;: &quot;db&quot;,
+          &quot;target&quot;: &quot;canary&quot;,
+          &quot;kind&quot;: &quot;dependency&quot;,
+          &quot;evidence&quot;: [
+            &quot;lab-design&quot;
+          ],
+          &quot;essential&quot;: false
+        },
+        {
+          &quot;id&quot;: &quot;api-collector&quot;,
+          &quot;source&quot;: &quot;api&quot;,
+          &quot;target&quot;: &quot;collector&quot;,
+          &quot;kind&quot;: &quot;communication&quot;,
+          &quot;evidence&quot;: [
+            &quot;lab-design&quot;
+          ],
+          &quot;essential&quot;: false
+        }
+      ]
+    }
+  }
+}</pre></details></body></html>

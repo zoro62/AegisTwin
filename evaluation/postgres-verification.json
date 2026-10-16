@@ -1,0 +1,7 @@
+{
+  "database": "postgresql",
+  "restricted_application_role": true,
+  "direct_history_update_rejected": true,
+  "cross_workspace_foreign_key_rejected": true,
+  "verification_rows_rolled_back": true
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "close-admin",
+    "label": "Remove public app \u2192 admin exposure",
+    "remove_relationships": [
+      "web-admin"
+    ],
+    "cost": 2,
+    "cost_basis": "estimated",
+    "impact": "Public application cannot reach administration. Required app/API/database flow remains.",
+    "conflicts": [],
+    "rollback": "Restore web-admin in a new snapshot."
+  },
+  {
+    "id": "least-privilege",
+    "label": "Remove excessive canary read permission",
+    "remove_relationships": [
+      "user-read"
+    ],
+    "cost": 1,
+    "cost_basis": "estimated",
+    "impact": "Test identity loses canary read; application network paths remain.",
+    "conflicts": [],
+    "rollback": "Restore user-read in a new snapshot."
+  },
+  {
+    "id": "close-db",
+    "label": "Remove direct app \u2192 database exposure",
+    "remove_relationships": [
+      "web-db"
+    ],
+    "cost": 1,
+    "cost_basis": "estimated",
+    "impact": "Database access remains through internal API.",
+    "conflicts": [],
+    "rollback": "Restore web-db in a new snapshot."
+  },
+  {
+    "id": "stop-api",
+    "label": "Disable app \u2192 API connectivity",
+    "remove_relationships": [
+      "web-api"
+    ],
+    "cost": 1,
+    "cost_basis": "estimated",
+    "impact": "Breaks essential application flow; planner must reject.",
+    "conflicts": [],
+    "rollback": "Restore web-api in a new snapshot."
+  }
+]

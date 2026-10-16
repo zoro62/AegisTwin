@@ -1,0 +1,72 @@
+{
+  "dimension": "connectivity",
+  "observations": {
+    "schema_version": "1.0",
+    "source": "bundled-web-probe",
+    "observed_at": "2026-10-16T13:46:34.276912+00:00",
+    "simulation": false,
+    "dimension": "connectivity",
+    "results": [
+      {
+        "relationship_id": "web-api",
+        "destination": "api",
+        "port": 8080,
+        "success": true,
+        "error": null,
+        "runtime_ms": 5.627
+      },
+      {
+        "relationship_id": "web-db",
+        "destination": "database",
+        "port": 8080,
+        "success": true,
+        "error": null,
+        "runtime_ms": 0.937
+      },
+      {
+        "relationship_id": "web-admin",
+        "destination": "admin",
+        "port": 8080,
+        "success": true,
+        "error": null,
+        "runtime_ms": 2.448
+      }
+    ],
+    "limitation": "TCP connection only. No authentication or compromise was tested."
+  },
+  "configuration": "exposed",
+  "comparisons": [
+    {
+      "relationship_id": "web-api",
+      "destination": "api",
+      "port": 8080,
+      "success": true,
+      "error": null,
+      "runtime_ms": 5.627,
+      "predicted": true,
+      "agrees": true
+    },
+    {
+      "relationship_id": "web-db",
+      "destination": "database",
+      "port": 8080,
+      "success": true,
+      "error": null,
+      "runtime_ms": 0.937,
+      "predicted": true,
+      "agrees": true
+    },
+    {
+      "relationship_id": "web-admin",
+      "destination": "admin",
+      "port": 8080,
+      "success": true,
+      "error": null,
+      "runtime_ms": 2.448,
+      "predicted": true,
+      "agrees": true
+    }
+  ],
+  "discrepancies": [],
+  "limitations": "Validates TCP reachability only. Denial can also result from DNS or a stopped service. Permission and attack-transition validation are separate."
+}

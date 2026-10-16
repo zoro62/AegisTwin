@@ -1,0 +1,189 @@
+{
+  "schema_version": "1.0",
+  "name": "AegisTwin isolated lab v2",
+  "assets": [
+    {
+      "id": "proxy",
+      "label": "Reverse proxy",
+      "kind": "service",
+      "segment": "edge",
+      "critical": false
+    },
+    {
+      "id": "web",
+      "label": "Public demo app",
+      "kind": "service",
+      "segment": "edge",
+      "critical": false
+    },
+    {
+      "id": "api",
+      "label": "Internal API",
+      "kind": "service",
+      "segment": "internal",
+      "critical": false
+    },
+    {
+      "id": "db",
+      "label": "Synthetic database",
+      "kind": "database",
+      "segment": "data",
+      "critical": false
+    },
+    {
+      "id": "admin",
+      "label": "Administration",
+      "kind": "admin",
+      "segment": "management",
+      "critical": false
+    },
+    {
+      "id": "test-user",
+      "label": "Test application identity",
+      "kind": "principal",
+      "segment": "identity",
+      "critical": false
+    },
+    {
+      "id": "canary",
+      "label": "Canary records",
+      "kind": "resource",
+      "segment": "data",
+      "critical": true
+    },
+    {
+      "id": "collector",
+      "label": "Telemetry collector",
+      "kind": "service",
+      "segment": "internal",
+      "critical": false
+    },
+    {
+      "id": "edge",
+      "label": "Edge segment",
+      "kind": "segment",
+      "segment": "edge",
+      "critical": false
+    },
+    {
+      "id": "internal",
+      "label": "Internal segment",
+      "kind": "segment",
+      "segment": "internal",
+      "critical": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "lab-design",
+      "source": "bundled-lab-v2",
+      "collected_at": "2026-10-16T12:56:02.960116Z",
+      "expires_at": "2026-11-15T12:56:02.960116Z",
+      "confidence": "confirmed",
+      "method": "asserted",
+      "note": "Synthetic lab design assertion, not a successful connectivity probe or exploit."
+    }
+  ],
+  "relationships": [
+    {
+      "id": "proxy-web",
+      "source": "proxy",
+      "target": "web",
+      "kind": "network",
+      "evidence": [
+        "lab-design"
+      ],
+      "essential": true
+    },
+    {
+      "id": "web-api",
+      "source": "web",
+      "target": "api",
+      "kind": "network",
+      "evidence": [
+        "lab-design"
+      ],
+      "essential": true
+    },
+    {
+      "id": "api-db",
+      "source": "api",
+      "target": "db",
+      "kind": "network",
+      "evidence": [
+        "lab-design"
+      ],
+      "essential": true
+    },
+    {
+      "id": "web-admin",
+      "source": "web",
+      "target": "admin",
+      "kind": "network",
+      "evidence": [
+        "lab-design"
+      ],
+      "essential": false
+    },
+    {
+      "id": "web-db",
+      "source": "web",
+      "target": "db",
+      "kind": "network",
+      "evidence": [
+        "lab-design"
+      ],
+      "essential": false
+    },
+    {
+      "id": "user-auth",
+      "source": "test-user",
+      "target": "api",
+      "kind": "authentication",
+      "evidence": [
+        "lab-design"
+      ],
+      "essential": false
+    },
+    {
+      "id": "user-read",
+      "source": "test-user",
+      "target": "canary",
+      "kind": "permission",
+      "evidence": [
+        "lab-design"
+      ],
+      "essential": false
+    },
+    {
+      "id": "admin-data",
+      "source": "admin",
+      "target": "canary",
+      "kind": "permission",
+      "evidence": [
+        "lab-design"
+      ],
+      "essential": false
+    },
+    {
+      "id": "db-canary",
+      "source": "db",
+      "target": "canary",
+      "kind": "dependency",
+      "evidence": [
+        "lab-design"
+      ],
+      "essential": false
+    },
+    {
+      "id": "api-collector",
+      "source": "api",
+      "target": "collector",
+      "kind": "communication",
+      "evidence": [
+        "lab-design"
+      ],
+      "essential": false
+    }
+  ]
+}
